@@ -27,6 +27,7 @@ const App = () => {
   return (
    <div>
       {(typeof data.main != 'undefined') ? <WeatherApp setMoreinfo={setMoreinfo} moreinfo={moreinfo} weatherData={data}/> : <SwitchLocation />}
+      <h4 className="pt-10 text-xl text-center font-semibold credits">Created by <span className="bg-gradient-to-r from-violet-600 to-fuchsia-500 bg-clip-text text-transparent">Emmanuel Ngoka</span></h4>
     </div>
  )}
 
