@@ -1,10 +1,12 @@
 import { useState, useEffect } from 'react'
 import WeatherApp from './components/WeatherApp'
+import SwitchLocation from './components/SwitchLocation'
 
 const App = () => {
   const [lat, setLat] = useState([]);
   const [lon, setLon] = useState([]);
   const [data, setData] = useState([])
+  const [moreinfo, setMoreinfo] = useState(false)
 
   useEffect(() => {
   	async function fetchData() {
@@ -24,7 +26,7 @@ const App = () => {
 
   return (
    <div>
-      {(typeof data.main != 'undefined') && <WeatherApp weatherData={data}/>}
+      {(typeof data.main != 'undefined') ? <WeatherApp setMoreinfo={setMoreinfo} moreinfo={moreinfo} weatherData={data}/> : <SwitchLocation />}
     </div>
  )}
 
